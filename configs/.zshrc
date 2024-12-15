@@ -1,3 +1,10 @@
+# Check if ~/.env exists. Use this file to set device-specific environment variables, such as AFFIRM to indicate work
+# environment
+# if [[ -f "$HOME/.env" ]]; then
+#   # Export variables from ~/.env
+#   export $(grep -v '^#' "$HOME/.env"| xargs)
+# fi
+
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
@@ -52,7 +59,16 @@ fi
 
 
 # Set up the pure prompt
-fpath+=("$(brew --prefix)/share/zsh/site-functions")
+case "$(uname)" in
+  Linux)
+    # Linux
+    ;;
+  Darwin)
+    # MacOS
+    fpath+=("$(brew --prefix)/share/zsh/site-functions")
+    ;;
+esac
+
 autoload -U promptinit; promptinit
 
 RED="#ff5c57"
@@ -69,10 +85,17 @@ zstyle :prompt:pure:pompt:success color $MAGENTA
 PURE_PROMPT_SYMBOL="λ"
 prompt pure
 
-
 # Setup plugins and CLI utilities
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+case "$(uname)" in
+  Linux)
+    # Linux
+    ;;
+  Darwin)
+    # MacOS
+    source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+    ;;
+esac
 source $HOME/.config/broot/launcher/bash/br
 eval "$(zoxide init zsh)"
 
@@ -83,8 +106,17 @@ eval "$(zoxide init zsh)"
 # - $ZSH_CUSTOM/aliases.zsh
 # - $ZSH_CUSTOM/macos.zsh
 # For a full list of active aliases, run `alias`.
+case "$(uname)" in
+  Linux)
+    # Linux
+    ;;
+  Darwin)
+    # MacOS
+    alias bup="brew update && brew upgrade"
+    ;;
+esac
+
 alias cl="clear"
 alias v="nvim"
 alias projects="cd ~/projects"
 alias aom="cd ~/projects/aomstats"
-alias bup="brew update && brew upgrade"

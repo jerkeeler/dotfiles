@@ -1,0 +1,8 @@
+*~
+.DS_Store
+.env
+keeler_scripts/
+remote-schema.graphql
+.graphqlconfig
+.graphqlrc.yml
+keeler*

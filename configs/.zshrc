@@ -73,6 +73,7 @@ prompt pure
 # Setup plugins and CLI utilities
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $HOME/.config/broot/launcher/bash/br
 eval "$(zoxide init zsh)"
 
 # Set personal aliases, overriding those provided by Oh My Zsh libs,

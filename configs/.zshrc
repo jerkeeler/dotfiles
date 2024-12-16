@@ -113,6 +113,9 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!{.
 source $HOME/.config/broot/launcher/bash/br
 eval "$(zoxide init zsh)"
 
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
 # Set personal aliases, overriding those provided by Oh My Zsh libs,
 # plugins, and themes. Aliases can be placed here, though Oh My Zsh
 # users are encouraged to define aliases within a top-level file in

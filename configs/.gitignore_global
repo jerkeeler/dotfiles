@@ -6,3 +6,4 @@ remote-schema.graphql
 .graphqlconfig
 .graphqlrc.yml
 keeler*
+.envrc

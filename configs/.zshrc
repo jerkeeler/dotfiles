@@ -49,7 +49,9 @@ case "$(uname)" in
     ;;
   Darwin)
     # MacOS
-    eval "$(/opt/homebrew/bin/brew shellenv)"
+    if ! command -v brew &> /dev/null; then
+      eval "$(/opt/homebrew/bin/brew shellenv)"
+    fi
     ;;
 esac
 

@@ -42,8 +42,16 @@ plugins=(git asdf direnv)
 
 source $ZSH/oh-my-zsh.sh
 
-# MAKE SURE HOMEBREW IS SETUP
-eval "$(/opt/homebrew/bin/brew shellenv)"
+# MAKE SURE HOMEBREW IS SETUP AND ANY OTHER THINGS THAT MUST BE AT THE TOP
+case "$(uname)" in
+  Linux)
+    # Linux
+    ;;
+  Darwin)
+    # MacOS
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+    ;;
+esac
 
 # ===========================================================
 # User configuration

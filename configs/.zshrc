@@ -42,6 +42,9 @@ plugins=(git asdf direnv)
 
 source $ZSH/oh-my-zsh.sh
 
+# MAKE SURE HOMEBREW IS SETUP
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # ===========================================================
 # User configuration
 # ===========================================================

@@ -99,6 +99,7 @@ case "$(uname)" in
     source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
     ;;
 esac
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!{.git/*,**/*.pyc,node_modules/*,**/.mypy/*,.idea/*,**/.mypy_cache/*,**/.venv/*,**/*.egg-info/*}"'
 source $HOME/.config/broot/launcher/bash/br
 eval "$(zoxide init zsh)"
 
@@ -116,6 +117,9 @@ case "$(uname)" in
   Darwin)
     # MacOS
     alias bup="brew update && brew upgrade"
+    alias icloud="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/"
+    alias ledger="cd ~/Documents/Personal\ Important/personal_ledger/"
+    alias dev="cd ~/Developer"
     ;;
 esac
 

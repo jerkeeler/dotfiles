@@ -40,3 +40,7 @@ Follow ups to get everything to work:
 If you want to add a new config from somewhere, first create it in the `configs/` directory in this repo.
 Think of the `configs/` directory as your home directory, so wherever the config actually lives in `~`
 it should live in the same path under `configs/`. Once added run `stow configs/` to setup the symlink correctly.
+
+## Device-specific config
+
+Device specific .zshrc values should live in that devices `.zprofile`. For example if I have an `affirm-specific` alias, that would be stored in `.zprofile` on the Affirm device.

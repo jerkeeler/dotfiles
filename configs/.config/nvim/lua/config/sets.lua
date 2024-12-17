@@ -43,14 +43,6 @@ vim.opt.scrolloff = 8
 vim.opt.incsearch = true
 vim.opt.ignorecase = true
 -- vim.opt.hlserach = true
---
--- Set `commentstring` for a specific filetype
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = "sql", -- Replace with your desired filetype
-	callback = function()
-		vim.bo.commentstring = "-- %s"
-	end,
-})
 
 -- Set conceal level for the Obsidian plugin, not sure what this does
 vim.opt.conceallevel = 2

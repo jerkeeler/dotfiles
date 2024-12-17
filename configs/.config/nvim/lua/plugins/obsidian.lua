@@ -22,6 +22,6 @@ return {
 				path = "~/Documents/in_my_life",
 			},
 		},
-		new_notes_location = "00_Inbox",
+		new_notes_location = "notes_subdir",
 	},
 }

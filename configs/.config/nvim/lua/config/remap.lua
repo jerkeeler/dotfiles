@@ -29,7 +29,7 @@ map("n", "<Leader>h", "<cmd>bprevious<cr>")
 map("n", "<Leader>q", "<cmd>e ~/buffer<cr>")
 
 -- Toggle paste mode on/off
-map("n", "<Leader>pp", "<cmd>setlocal paste!<cr>")
+map("n", "<Leader>P", "<cmd>setlocal paste!<cr>")
 
 -- Fast saving
 map("n", "<Leader>w", "<cmd>w!<cr>")
@@ -122,3 +122,13 @@ map("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
 map("n", "gr", vim.lsp.buf.references, { desc = "Go to references" })
 map("n", "gi", vim.lsp.buf.implementation, { desc = "Go to implementation" })
 map("n", "gt", vim.lsp.buf.type_definition, { desc = "Go to type definition" })
+
+-- """"""""""""""""""""""""""""""
+-- " Obsidian remaps
+-- """"""""""""""""""""""""""""""
+map("n", "<leader>nn", "<cmd>ObsidianNew<cr>")
+
+-- """"""""""""""""""""""""""""""
+-- " Macros for common code that is typed
+-- """"""""""""""""""""""""""""""
+map("n", "<leader>yy", "i(year, month, day) = (year(current_date), month(current_date), day(current_date)) <esc>")

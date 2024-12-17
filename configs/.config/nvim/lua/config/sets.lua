@@ -51,3 +51,6 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.bo.commentstring = "-- %s"
 	end,
 })
+
+-- Set conceal level for the Obsidian plugin, not sure what this does
+vim.opt.conceallevel = 2

@@ -19,7 +19,7 @@ map("n", "<leader>o", "<CMD>vsplit<CR>")
 map("n", "<leader>p", "<CMD>split<CR>")
 
 -- Hop to the basic file browser easily, "fd" for file directory
-map("n", "<Leader>fd", "<cmd>Ex<cr>")
+-- map("n", "<Leader>fd", "<cmd>Ex<cr>")
 
 -- Change buffern easily
 map("n", "<Leader>l", "<cmd>bnext<cr>")
@@ -100,9 +100,9 @@ map("n", "<Leader>bd", "<cmd>bdelete<cr>")
 -- """"""""""""""""""""""""""""""
 -- " FzfLua remaps
 -- """"""""""""""""""""""""""""""
-map("n", "<leader>f", "<cmd>FzfLua files<cr>")
-map("n", "<leader>b", "<cmd>FzfLua buffers<cr>")
-map("n", "<leader>g", "<cmd>FzfLua live_grep<cr>")
+map("n", "<leader>ff", "<cmd>FzfLua files<cr>")
+map("n", "<leader>fb", "<cmd>FzfLua buffers<cr>")
+map("n", "<leader>fg", "<cmd>FzfLua live_grep<cr>")
 map("n", "<leader>fg", "<cmd>FzfLua git_files<cr>")
 
 -- """"""""""""""""""""""""""""""

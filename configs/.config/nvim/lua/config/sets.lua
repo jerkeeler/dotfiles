@@ -23,7 +23,6 @@ vim.opt.inccommand = "split"
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.opt.wrap = false
-vim.opt.colorcolumn = "88"
 vim.opt.listchars = {
 	-- eol = "↲",
 	tab = "▸ ",
@@ -33,6 +32,8 @@ vim.opt.listchars = {
 	--space = "␣",
 	nbsp = "⦸",
 }
+vim.opt.showbreak = "↪ " -- Prefix for wrapped lines
+
 vim.opt.list = true
 
 -- Ensure at least 8 lines offset from bottom of window

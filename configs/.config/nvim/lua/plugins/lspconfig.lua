@@ -74,7 +74,7 @@ return {
 					capabilities = capabilities,
 				})
 			end,
-			["ruby"] = function()
+			["ruby_lsp"] = function()
 				nvim_lsp["ruby_lsp"].setup({
 					on_attach = on_attach,
 					capabilities = capabilities,

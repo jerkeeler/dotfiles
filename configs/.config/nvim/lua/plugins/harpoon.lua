@@ -10,6 +10,10 @@ return {
 			harpoon:list():add()
 		end)
 
+		vim.keymap.set("n", "<leader>d", function()
+			harpoon:list():remove()
+		end)
+
 		-- basic telescope configuration
 		local conf = require("telescope.config").values
 		local function toggle_telescope(harpoon_files)

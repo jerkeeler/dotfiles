@@ -23,5 +23,14 @@ return {
 			},
 		},
 		new_notes_location = "notes_subdir",
+		note_frontmatter_func = function(note)
+			-- Add the title of the note as an alias.
+			if note.title then
+				note:add_alias(note.title)
+			end
+
+			local out = {}
+			return out
+		end,
 	},
 }

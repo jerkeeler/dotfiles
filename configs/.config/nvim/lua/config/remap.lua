@@ -139,3 +139,20 @@ map("n", "<leader>nn", "<cmd>ObsidianNew<cr>")
 -- " Macros for common code that is typed
 -- """"""""""""""""""""""""""""""
 map("n", "<leader>yy", "i(year, month, day) = (year(current_date), month(current_date), day(current_date)) <esc>")
+
+local function get_visual_selection()
+	vim.cmd('noau normal! "vy') -- Yank visual selection into the "v register
+	return vim.fn.getreg("v") -- Return the content of the "v register
+end
+
+-- Function to run a constant shell command on the visual selection
+local function open_github_pr()
+	-- Function to get the visual selection
+
+	-- Get the current selection and remove newlines
+	local selection = get_visual_selection():gsub("%s+", "")
+	local open = "open https://github.com/Affirm/all-the-things/pull/" .. selection
+
+	vim.fn.jobstart(open, { detach = true })
+end
+map("v", "<leader>gh", open_github_pr)

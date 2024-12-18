@@ -33,6 +33,7 @@ vim.opt.listchars = {
 	nbsp = "⦸",
 }
 vim.opt.showbreak = "↪ " -- Prefix for wrapped lines
+vim.opt.linebreak = true
 
 vim.opt.list = true
 

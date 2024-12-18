@@ -156,3 +156,19 @@ local function open_github_pr()
 	vim.fn.jobstart(open, { detach = true })
 end
 map("v", "<leader>gh", open_github_pr)
+
+-- Function to get the current date and format it
+local function get_formatted_date()
+	local days = { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" }
+	local date = os.date("*t") -- Get the current date table
+	local formatted_date = string.format("[[%04d-%02d-%02d %s]]", date.year, date.month, date.day, days[date.wday])
+	-- Insert the formatted date after the cursor position
+	local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+	local current_line = vim.api.nvim_get_current_line()
+	local new_line = current_line:sub(1, col) .. formatted_date .. current_line:sub(col + 1)
+	vim.api.nvim_set_current_line(new_line)
+	vim.api.nvim_win_set_cursor(0, { line, #new_line })
+end
+
+-- Map the function to <leader> + t
+map("i", "<leader>tt", get_formatted_date, { noremap = true, silent = true })

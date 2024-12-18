@@ -165,10 +165,10 @@ local function get_formatted_date()
 	-- Insert the formatted date after the cursor position
 	local line, col = unpack(vim.api.nvim_win_get_cursor(0))
 	local current_line = vim.api.nvim_get_current_line()
-	local new_line = current_line:sub(1, col) .. formatted_date .. current_line:sub(col + 1)
+	local new_line = current_line:sub(1, col + 1) .. formatted_date .. current_line:sub(col + 2)
 	vim.api.nvim_set_current_line(new_line)
 	vim.api.nvim_win_set_cursor(0, { line, #new_line })
 end
 
 -- Map the function to <leader> + t
-map("i", "<leader>tt", get_formatted_date, { noremap = true, silent = true })
+map("n", "<leader>tt", get_formatted_date, { noremap = true, silent = true })

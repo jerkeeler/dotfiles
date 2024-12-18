@@ -103,7 +103,7 @@ map("n", "<Leader>bd", "<cmd>bdelete<cr>")
 map("n", "<leader>ff", "<cmd>FzfLua files<cr>")
 map("n", "<leader>fb", "<cmd>FzfLua buffers<cr>")
 map("n", "<leader>fg", "<cmd>FzfLua live_grep<cr>")
-map("n", "<leader>fg", "<cmd>FzfLua git_files<cr>")
+-- map("n", "<leader>fg", "<cmd>FzfLua git_files<cr>")
 
 -- """"""""""""""""""""""""""""""
 -- " (DEPRECATED) Neotree remaps

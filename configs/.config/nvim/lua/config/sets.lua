@@ -23,6 +23,7 @@ vim.opt.inccommand = "split"
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.opt.wrap = false
+vim.opt.colorcolumn = "88"
 vim.opt.listchars = {
 	-- eol = "↲",
 	tab = "▸ ",

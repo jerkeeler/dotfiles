@@ -1,6 +1,8 @@
 [user]
     name = "Jeremy Keeler"
     email = "jeremy@keeler.dev"
+[includeIf "gitdir:**/Affirm/**"]
+    path = ~/.gitconfig-work
 [core]
     excludesfile = ~/.gitignore_global
     pager = delta

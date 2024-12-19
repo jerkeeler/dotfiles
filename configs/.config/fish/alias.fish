@@ -1,12 +1,12 @@
-alias vim=nvim
-alias v=nvim
-alias l='ls -lah'
-alias cl=clear
-alias reload='exec fish'
-alias obs="cd ~/Documents/in_my_life && nvim"
-alias glog="git log --oneline --graph"
-alias ta="tmux attach"
-alias dev="cd ~/Developer"
+alias vim nvim
+alias v nvim
+alias l 'ls -lah'
+alias cl clear
+alias reload 'exec fish'
+alias obs "cd ~/Documents/in_my_life && nvim"
+alias glog "git log --oneline --graph"
+alias ta "tmux attach"
+alias dev "cd ~/Developer"
 
 # git
 abbr -a gs  git status -sb

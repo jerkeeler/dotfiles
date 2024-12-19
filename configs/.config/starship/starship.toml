@@ -1,0 +1,10 @@
+right_format = """$time"""
+
+[character]
+success_symbol = "[λ](bold green)"
+error_symbol = "[✗](bold red)"
+
+[time]
+disabled=false
+format="[$time]($style)"
+style="green"

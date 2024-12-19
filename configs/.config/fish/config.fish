@@ -9,7 +9,11 @@ if test -e ~/.config/fish/private.fish
 end
 
 # Make sure homebrew in on the path baby
-eval "$(/usr/local/bin/brew shellenv)"
+if test -e /opt/homebrew/bin/brew
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+else
+  eval "$(/usr/local/bin/brew shellenv)"
+end
 fish_add_path /opt/homebrew/bin/
 
 # Init prompt and zoxide and another CLI utilities

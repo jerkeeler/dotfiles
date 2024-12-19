@@ -14,7 +14,6 @@ if test -e /opt/homebrew/bin/brew
 else
   eval "$(/usr/local/bin/brew shellenv)"
 end
-fish_add_path /opt/homebrew/bin/
 
 # Init prompt and zoxide and another CLI utilities
 starship init fish | source

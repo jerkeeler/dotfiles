@@ -16,6 +16,7 @@ fish_add_path /opt/homebrew/bin/
 starship init fish | source
 zoxide init fish | source
 fzf --fish | source
+source "$(brew --prefix asdf)"/libexec/asdf.fish
 
 # Export and set important environment variables
 set -Ux EDITOR "nvim"

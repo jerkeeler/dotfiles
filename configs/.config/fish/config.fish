@@ -15,7 +15,6 @@ fish_add_path /opt/homebrew/bin/
 # Init prompt and zoxide and another CLI utilities
 starship init fish | source
 zoxide init fish | source
-fzf --fish | source
 source "$(brew --prefix asdf)"/libexec/asdf.fish
 
 # Export and set important environment variables

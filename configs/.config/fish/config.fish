@@ -3,3 +3,4 @@ starship init fish | source
 zoxide init fish | source
 
 set -Ux EDITOR "nvim"
+set -Ux LSCOLORS "gxfxbEaEBxxEhEhBaDaCaD"

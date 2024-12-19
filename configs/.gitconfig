@@ -3,7 +3,7 @@
     email = "jeremy@keeler.dev"
 [core]
     excludesfile = ~/.gitignore_global
-    pager = diff-so-fancy | less --tabs=4 -RFX
+    pager = delta
     editor = nvim
     fsmonitor = true
     untrackedcache = true
@@ -11,36 +11,20 @@
     co = checkout
     st = status
     br = branch
-    append = town append
-    hack = town hack
-    kill = town kill
-    new-pull-request = town new-pull-request
-    prepend = town prepend
-    prune-branches = town prune-branches
-    rename-branch = town rename-branch
-    repo = town repo
-    ship = town ship
-    sync = town sync
 [feature]
     manyFiles = true
 [push]
     default = current
 [color]
     ui = true
-[color "diff-highlight"]
-    oldNormal = red bold
-    oldHighlight = red bold 52
-    newNormal = green bold
-    newHighlight = green bold 22
-[color "diff"]
-    meta = 11
-    frag = magenta bold
-    func = 146 bold
-    commit = yellow bold
-    old = red bold
-    new = green bold
-    whitespace = red reverse
-[git-town]
-    sync-upstream = false
 [init]
 	defaultBranch = main
+[delta]
+  navigate = true
+  dark = true
+  syntax-theme = Dracula
+  side-by-side = true
+[interactive]
+  diffFilter = delta --color-only
+[merge]
+  conflictstyle = zdiff3

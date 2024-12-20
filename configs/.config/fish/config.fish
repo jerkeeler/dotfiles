@@ -18,7 +18,10 @@ end
 # Init prompt and zoxide and another CLI utilities
 starship init fish | source
 zoxide init fish | source
+
+# Dev tools
 source "$(brew --prefix asdf)"/libexec/asdf.fish
+source "$HOME/.cargo/env.fish"
 
 # Export and set important environment variables
 set -Ux EDITOR "nvim"

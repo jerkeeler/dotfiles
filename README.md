@@ -38,6 +38,8 @@ Follow ups to get everything to work:
   - `asdf plugin-add nodejs && asdf install nodejs 22.12.0 && asdf global nodejs 22.12.0`
 - [Setup a new ssh key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent), attach it to GitHub and any machines you need to ssh into
 - Install [docker desktop](https://www.docker.com/products/docker-desktop/) if the homewbrew version doesn't work correctly
+- Install [rust](https://www.rust-lang.org/tools/install)
+  - `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
 
 ## Adding a new dotfiles
 

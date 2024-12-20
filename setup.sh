@@ -23,9 +23,6 @@ echo "Command Line Tools are installed at $(xcode-select -p)"
 # Install everything in Brewfile
 brew bundle install
 
-# Install oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 # Install tmux package manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 

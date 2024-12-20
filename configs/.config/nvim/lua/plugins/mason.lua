@@ -20,6 +20,7 @@ return {
 				"astro",
 				"svelte",
 				"ruby_lsp",
+				"rust_analyzer",
 			},
 		})
 

@@ -106,6 +106,13 @@ map("n", "<leader>fg", "<cmd>FzfLua live_grep<cr>")
 -- map("n", "<leader>fg", "<cmd>FzfLua git_files<cr>")
 
 -- """"""""""""""""""""""""""""""
+-- " Copilot
+-- """"""""""""""""""""""""""""""
+-- Change autocomplete key to <C-a>
+vim.api.nvim_set_keymap("i", "<C-a>", 'copilot#Accept("<CR>")', { expr = true, silent = true })
+vim.g.copilot_no_tab_map = true
+
+-- """"""""""""""""""""""""""""""
 -- " (DEPRECATED) Neotree remaps
 -- """"""""""""""""""""""""""""""
 -- map("n", "<leader>n", "<cmd>Neotree<cr>")

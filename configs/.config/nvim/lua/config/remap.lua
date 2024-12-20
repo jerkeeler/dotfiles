@@ -46,6 +46,9 @@ map("n", "N", "Nzz")
 -- Make a leader + p paste and not overwrite the buffer! Super useful
 map("x", "<leader>p", '"_dP')
 
+-- Toggle spelling
+map("n", "<leader>ss", "<cmd>set invspell<cr>")
+
 -- """"""""""""""""""""""""""""""
 -- " => Visual mode related
 -- """"""""""""""""""""""""""""""

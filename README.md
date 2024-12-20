@@ -27,6 +27,10 @@ What setup.sh is doing in the background:
 
 Follow ups to get everything to work:
 
+- Set your default shell to fiiiiiiiish
+  ```
+  chsh -s /opt/homebrew/bin/fish
+  ```
 - Start tmux, then install all plugins with `<prefix> + I` or `<C-space + I>` if `<C-space>` is the prefix (which it is)
 - Start nvim and everything should install, once finished, quit and restart
 - Install nodejs 22+ for neovim LSP plugins to work

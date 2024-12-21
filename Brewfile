@@ -1,5 +1,6 @@
 tap "homebrew/bundle"
 brew "openssl@3"
+brew "asdf"
 brew "bat"
 brew "broot"
 brew "readline"

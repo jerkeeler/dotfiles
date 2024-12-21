@@ -21,6 +21,7 @@ return {
 				"svelte",
 				"ruby_lsp",
 				"rust_analyzer",
+				"gopls",
 			},
 		})
 

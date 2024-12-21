@@ -36,6 +36,7 @@ return {
 				"rust",
 				"svelte",
 				"python",
+				"go",
 			},
 			incremental_selection = {
 				enable = true,

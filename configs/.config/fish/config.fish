@@ -15,11 +15,10 @@ else
   eval "$(/usr/local/bin/brew shellenv)"
 end
 
-# Init prompt and zoxide and another CLI utilities
+# Init prompt and zoxide and other CLI utilities
 starship init fish | source
 zoxide init fish | source
-
-# Dev tools
+direnv hook fish | source
 source "$(brew --prefix asdf)"/libexec/asdf.fish
 source "$HOME/.cargo/env.fish"
 

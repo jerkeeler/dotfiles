@@ -12,7 +12,6 @@ function fish_greeting
       set diff_cow false
     end
 
-
     # Do lolcat 1 in 10 times for some extra color
     if test (random 1 10) -eq 1
       set lolcat true
@@ -20,9 +19,19 @@ function fish_greeting
       set lolcat false
     end
 
+    # Do super lolcat 1 in 10 times (therefore 1 in 100 times)
+    if test (random 1 10) -eq 1
+      set superlolcat true
+    else
+      set superlolcat false
+    end
+
     # Output the fortune with cowsay and lolcat options
-    if $diff_cow && $lolcat
-      echo $fortune_output | cowsay $selected_option | lolcat
+    if $diff_cow && $lolcat && $superlolcat
+      echo "Jackpot! 💰"
+      echo $fortune_output | cowsay $selected_option | lolcat -a -t -d 6
+    else if $diff_cow && $lolcat
+      echo $fortune_output | cowsay $selected_option | lolcat -t
     else if $diff_cow
       echo $fortune_output | cowsay $selected_option
     else

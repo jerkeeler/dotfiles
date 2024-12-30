@@ -50,3 +50,14 @@ it should live in the same path under `configs/`. Once added run `stow configs/`
 ## Device-specific config
 
 Device specific .zshrc values should live in that devices `.zprofile`. For example if I have an `affirm-specific` alias, that would be stored in `.zprofile` on the Affirm device.
+
+## Adding more fortunes
+
+The message of the day prompt generates a random forunte using the `fortune` utility. It also adds extra fortunes found in the extra_fortunes.txt file. To get these files
+to work correctly you must compile it into a `.dat` file. Use the following command to do so:
+
+```bash
+strfile extra_fortunes.txt
+```
+
+extra_fortunes.txt must have a new fortune on each line and each line must be separated by a %.

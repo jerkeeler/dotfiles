@@ -20,7 +20,8 @@ starship init fish | source
 zoxide init fish | source
 direnv hook fish | source
 source "$(brew --prefix asdf)"/libexec/asdf.fish
-source "$HOME/.cargo/env.fish"
+# Only need to source this cargo file if rust is installed manually and not through homebrew
+# source "$HOME/.cargo/env.fish"
 
 # Export and set important environment variables
 set -Ux EDITOR "nvim"

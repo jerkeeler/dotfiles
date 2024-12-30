@@ -9,14 +9,14 @@ map("n", "<C-h>", "<C-W>h")
 map("n", "<C-l>", "<C-W>l")
 
 -- Smart way to resize windows
-map("n", "<C-Left>", "<C-w><")
-map("n", "<C-Right>", "<C-w>>")
+map("n", "<C-Right>", "<C-w><")
+map("n", "<C-Left>", "<C-w>>")
 map("n", "<C-Up>", "<C-w>+")
 map("n", "<C-Down>", "<C-w>-")
 
 -- New windows
-map("n", "<leader>o", "<CMD>vsplit<CR>")
-map("n", "<leader>p", "<CMD>split<CR>")
+map("n", "<leader>so", "<CMD>vsplit<CR>")
+map("n", "<leader>sp", "<CMD>split<CR>")
 
 -- Hop to the basic file browser easily, "fd" for file directory
 -- map("n", "<Leader>fd", "<cmd>Ex<cr>")
@@ -29,7 +29,7 @@ map("n", "<Leader>h", "<cmd>bprevious<cr>")
 map("n", "<Leader>q", "<cmd>e ~/buffer<cr>")
 
 -- Toggle paste mode on/off
-map("n", "<Leader>P", "<cmd>setlocal paste!<cr>")
+map("n", "<Leader>pp", "<cmd>setlocal paste!<cr>")
 
 -- Fast saving
 map("n", "<Leader>w", "<cmd>w!<cr>")

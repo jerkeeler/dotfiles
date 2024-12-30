@@ -1,1 +1,19 @@
+# ====================================
+# Fonts and colorschemes
+# ====================================
 font-family = Sauce Code Pro Nerd Font Complete Mono
+bold-is-bright = true
+# font-size = 14
+
+# ====================================
+# Other configs
+# ====================================
+# window-inherit-font-size = false
+clipboard-trim-trailing-spaces = true
+quick-terminal-position = top
+quick-terminal-animation-duration = 0
+
+# ====================================
+# Keybinds
+# ====================================
+keybind = global:cmd+grave_accent=toggle_quick_terminal

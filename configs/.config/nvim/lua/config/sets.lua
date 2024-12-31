@@ -11,6 +11,8 @@ vim.opt.expandtab = true
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
+-- Prevent tabstops from being 4 in markdown files
+-- vim.g.markdown_recommended_style = 0
 vim.opt.encoding = "UTF-8"
 vim.opt.ruler = true
 vim.opt.title = true

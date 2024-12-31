@@ -16,4 +16,4 @@ quick-terminal-animation-duration = 0
 # ====================================
 # Keybinds
 # ====================================
-keybind = global:cmd+grave_accent=toggle_quick_terminal
+keybind = global:cmd+shift+grave_accent=toggle_quick_terminal

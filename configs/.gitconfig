@@ -17,6 +17,7 @@
     manyFiles = true
 [push]
     default = current
+    autoSetupRemote = true
 [color]
     ui = true
 [init]

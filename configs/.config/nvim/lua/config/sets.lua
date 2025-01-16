@@ -51,3 +51,5 @@ vim.opt.ignorecase = true
 
 -- Set conceal level for the Obsidian plugin, not sure what this does
 vim.opt.conceallevel = 2
+
+vim.g.copilot_filetypes = {markdown = false}

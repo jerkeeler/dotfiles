@@ -2,7 +2,7 @@ function fish_greeting
     echo Hello Jeremy 👋
     echo ""
 
-    fastfetch
+    # fastfetch
 
     # Get the short (less than 160 characters) fortune
     set fortune_output (fortune -s ~/dotfiles/extra_fortunes fortunes computers riddles men-women literature love magic linuxcookie drugs pets art law goedel education ethnic science ascii-art miscellaneous sports zippy politics startrek wisdom news work medicine people food humorists platitudes cookie songs-poems definitions kids fortunes translate-me)
@@ -29,7 +29,7 @@ function fish_greeting
       set superlolcat false
     end
 
-    echo ""
+    #echo ""
 
     # Output the fortune with cowsay and lolcat options
     if $diff_cow && $lolcat && $superlolcat
@@ -39,7 +39,7 @@ function fish_greeting
       echo $fortune_output | cowsay $selected_option | lolcat -t
     else if $diff_cow
       echo $fortune_output | cowsay $selected_option
-    else
+     else
       echo $fortune_output | cowsay
-    end
+     end
 end

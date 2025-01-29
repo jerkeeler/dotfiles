@@ -14,7 +14,7 @@
     "memory",
     "swap",
     "disk",
-    "publicip",
+    //"publicip",
     "localip",
     "battery",
     "poweradapter",

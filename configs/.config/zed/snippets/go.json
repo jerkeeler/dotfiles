@@ -1,0 +1,11 @@
+{
+  "Handle errors": {
+    "prefix": "err",
+    "body": [
+      "if err != nil {",
+      "\treturn err",
+      "}"
+    ],
+    "description": "Default way of propogating errors"
+  }
+}

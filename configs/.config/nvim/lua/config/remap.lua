@@ -114,6 +114,7 @@ map("n", "<leader>fg", "<cmd>FzfLua live_grep<cr>")
 -- Change autocomplete key to <C-a>
 vim.api.nvim_set_keymap("i", "<C-a>", 'copilot#Accept("<CR>")', { expr = true, silent = true })
 vim.g.copilot_no_tab_map = true
+map("n", "<C-c>", "<cmd>CopilotChatToggle<cr>")
 
 -- """"""""""""""""""""""""""""""
 -- " (DEPRECATED) Neotree remaps

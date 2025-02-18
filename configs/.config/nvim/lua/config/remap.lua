@@ -106,6 +106,8 @@ map("n", "<Leader>bd", "<cmd>bdelete<cr>")
 map("n", "<leader>ff", "<cmd>FzfLua files<cr>")
 map("n", "<leader>fb", "<cmd>FzfLua buffers<cr>")
 map("n", "<leader>fg", "<cmd>FzfLua live_grep<cr>")
+map("n", "<leader>fd", "<cmd>lua require('fzf-lua').lsp_document_symbols()<cr>")
+-- map("n", "<leader>fw", "<cmd>lua require('fzf-lua').lsp_workspace_symbols()<cr>")
 -- map("n", "<leader>fg", "<cmd>FzfLua git_files<cr>")
 
 -- """"""""""""""""""""""""""""""

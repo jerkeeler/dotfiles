@@ -11,7 +11,7 @@ alias dev "cd ~/Developer"
 # git
 abbr -a gs  git status -sb
 abbr -a ga  git add
-abbr -a gc --set-cursor 'git commit -am "%"'
+abbr -a gc --set-cursor 'git commit -am "%'
 abbr -a gcm git commit -m
 abbr -a gco git checkout
 abbr -a gp  git push

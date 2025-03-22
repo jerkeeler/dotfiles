@@ -7,6 +7,10 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
+  "icon_theme": "VSCode Icons (Dark)",
   "assistant": {
     "default_model": {
       "provider": "copilot_chat",
@@ -21,7 +25,7 @@
   "vim_mode": true,
   "show_whitespaces": "boundary",
   "preferred_line_length": 120,
-  "ui_font_size": 14,
+  "ui_font_size": 13,
   "buffer_font_size": 12,
   "theme": {
     "mode": "system",
@@ -36,7 +40,15 @@
   },
   "languages": {
     "Markdown": {
-      "show_inline_completions": false
+      "show_edit_predictions": false
+    },
+    "Python": {
+      "formatter": {
+        "external": {
+          "command": "black",
+          "args": ["--stdin-filename", "{buffer_path}", "-", "--line-length", "120"]
+        }
+      }
     }
   }
 }

@@ -11,10 +11,10 @@
     "edit_prediction_provider": "zed"
   },
   "icon_theme": "VSCode Icons (Dark)",
-  "assistant": {
+  "agent": {
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "claude-3-5-sonnet"
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4"
     },
     "version": "2"
   },

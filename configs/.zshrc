@@ -143,3 +143,8 @@ alias aom="cd ~/projects/aomstats"
 alias glog="git log --oneline --graph"
 alias ta="tmux attach"
 alias obs="cd ~/Documents/in_my_life && nvim"
+
+# Source a private file for sensitive or machine-specific settings, if it exists.
+if [ -f "${ZDOTDIR:-$HOME}/.zshrc.private" ]; then
+  source "${ZDOTDIR:-$HOME}/.zshrc.private"
+fi

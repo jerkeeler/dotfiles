@@ -2,3 +2,5 @@ private.fish
 configs/.config/tmux/plugins/
 .DS_Store
 fish_variables
+configs/.config/fish/functions/tlogin.fish
+configs/.config/fish/functions/tssh.fish

@@ -3,10 +3,6 @@ fish_config theme choose "Dracula Official"
 
 # Set up common aliases
 source ~/.config/fish/alias.fish
-# Set up private aliases and variables for specific machine
-if test -e ~/.config/fish/private.fish
-  source ~/.config/fish/private.fish
-end
 
 # Make sure homebrew in on the path baby
 if test -e /opt/homebrew/bin/brew
@@ -41,3 +37,8 @@ fish_add_path ~/go/bin
 # Export and set important environment variables
 set -Ux EDITOR "nvim"
 set -Ux LSCOLORS "gxfxbEaEBxxEhEhBaDaCaD"
+
+# Set up private aliases and variables for specific machine
+if test -e ~/.config/fish/private.fish
+  source ~/.config/fish/private.fish
+end

@@ -25,6 +25,10 @@ map("n", "<leader>sp", "<CMD>split<CR>")
 map("n", "<Leader>l", "<cmd>bnext<cr>")
 map("n", "<Leader>h", "<cmd>bprevious<cr>")
 
+-- Change tabs easily
+map("n", "<Leader>tn", "<cmd>tabn<cr>")
+map("n", "<Leader>tp", "<cmd>tabp<cr>")
+
 -- Quick scribble buffer
 map("n", "<Leader>q", "<cmd>e ~/buffer<cr>")
 

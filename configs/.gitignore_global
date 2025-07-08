@@ -8,3 +8,4 @@ remote-schema.graphql
 keeler*
 .envrc
 .cursorignore
+.cursor/

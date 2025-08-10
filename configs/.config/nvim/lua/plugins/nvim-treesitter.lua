@@ -37,6 +37,7 @@ return {
 				"svelte",
 				"python",
 				"go",
+				"ledger",
 			},
 			incremental_selection = {
 				enable = true,

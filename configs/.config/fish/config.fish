@@ -42,3 +42,4 @@ set -Ux LSCOLORS "gxfxbEaEBxxEhEhBaDaCaD"
 if test -e ~/.config/fish/private.fish
   source ~/.config/fish/private.fish
 end
+fish_add_path $HOME/.local/bin

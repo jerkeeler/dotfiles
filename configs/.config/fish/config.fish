@@ -44,3 +44,8 @@ if test -e ~/.config/fish/private.fish
 end
 fish_add_path $HOME/.local/bin
 export PATH="$HOME/.local/bin:$PATH"
+
+# Unlock keychain when connecting via SSH
+#if test -n "$SSH_CONNECTION"
+#  security unlock-keychain ~/Library/Keychains/login.keychain-db
+#end

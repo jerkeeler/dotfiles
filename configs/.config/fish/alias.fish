@@ -19,3 +19,5 @@ abbr -a gp  git push
 abbr -a gpl git pull
 abbr -a gd  git diff
 abbr -a gco git checkout
+abbr -a update_master "git fetch origin master:master"
+abbr -a update_main "git fetch origin main:main"

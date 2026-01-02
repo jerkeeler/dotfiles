@@ -49,3 +49,7 @@ export PATH="$HOME/.local/bin:$PATH"
 #if test -n "$SSH_CONNECTION"
 #  security unlock-keychain ~/Library/Keychains/login.keychain-db
 #end
+
+string match -q "$TERM_PROGRAM" "kiro" and . (kiro --locate-shell-integration-path fish)
+
+alias claude="/Users/jerkeeler/.claude/local/claude"

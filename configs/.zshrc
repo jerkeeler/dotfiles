@@ -148,3 +148,5 @@ alias obs="cd ~/Documents/in_my_life && nvim"
 if [ -f "${ZDOTDIR:-$HOME}/.zshrc.private" ]; then
   source "${ZDOTDIR:-$HOME}/.zshrc.private"
 fi
+
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"

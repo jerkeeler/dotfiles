@@ -18,9 +18,8 @@ What setup.sh is doing in the background:
 1. Installing command line tools
 2. Installing [homebrew](https://brew.sh)
 3. Running `brew bundle install` to install everything in `Brewfile`
-4. Installing [oh-my-zsh](https://ohmyz.sh/#install)
-5. Installing [tmux plugin manager](https://github.com/tmux-plugins/tpm)
-6. Setting up configs with [GNU stow](https://www.gnu.org/software/stow/)
+4. Installing [tmux plugin manager](https://github.com/tmux-plugins/tpm)
+5. Setting up configs with [GNU stow](https://www.gnu.org/software/stow/)
    - Which is just running the `stow configs/` command
 
 ### Part 2
@@ -37,7 +36,7 @@ Follow ups to get everything to work:
   - Can be installed using [asdf](https://asdf-vm.com) which is installed via homebrew
   - `asdf plugin-add nodejs && asdf install nodejs 22.12.0 && asdf global nodejs 22.12.0`
 - [Setup a new ssh key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent), attach it to GitHub and any machines you need to ssh into
-- Install [docker desktop](https://www.docker.com/products/docker-desktop/) if the homewbrew version doesn't work correctly
+- Install [docker desktop](https://www.docker.com/products/docker-desktop/) if the homebrew version doesn't work correctly
 - Install [rust](https://www.rust-lang.org/tools/install)
   - `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
 
@@ -53,11 +52,11 @@ Device specific .zshrc values should live in that devices `.zprofile`. For examp
 
 ## Adding more fortunes
 
-The message of the day prompt generates a random forunte using the `fortune` utility. It also adds extra fortunes found in the extra_fortunes.txt file. To get these files
+The message of the day prompt generates a random fortune using the `fortune` utility. It also adds extra fortunes found in the `extra_fortunes` file. To get these files
 to work correctly you must compile it into a `.dat` file. Use the following command to do so:
 
 ```bash
-strfile extra_fortunes.txt
+strfile extra_fortunes
 ```
 
-extra_fortunes.txt must have a new fortune on each line and each line must be separated by a %.
+`extra_fortunes` must have a new fortune on each line and each line must be separated by a %.

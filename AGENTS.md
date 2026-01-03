@@ -5,6 +5,7 @@
 - Root files cover setup and maintenance: `Brewfile`, `setup.sh`, `update.sh`, and `README.md`.
 - `configs/` holds GNU Stow packages; paths should mirror `$HOME` (example: `configs/.config/nvim/init.lua`).
 - `extra_fortunes` contains custom fortune entries and `extra_fortunes.dat` is the compiled database.
+- When searching or exploring, include dotfiles under `configs/` (notably `configs/.config/`); include hidden files but ignore `.git/`.
 
 ## Build, Test, and Development Commands
 

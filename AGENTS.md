@@ -28,7 +28,7 @@
 
 ## Commit & Pull Request Guidelines
 
-- Commit messages are short and imperative (example: "Add unlock command"). Keep one change per commit when possible.
+- Automated commit messages must be thorough and descriptive.
 - PRs should include a brief summary, any manual setup steps, and macOS-specific assumptions.
 
 ## Security & Configuration Tips

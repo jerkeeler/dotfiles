@@ -49,5 +49,3 @@ export PATH="$HOME/.local/bin:$PATH"
 #if test -n "$SSH_CONNECTION"
 #  security unlock-keychain ~/Library/Keychains/login.keychain-db
 #end
-
-alias claude="/Users/jerkeeler/.claude/local/claude"

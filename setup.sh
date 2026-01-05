@@ -26,5 +26,8 @@ brew bundle install
 # Install tmux package manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
+# Install claude code
+curl -fsSL https://claude.ai/install.sh | bash
+
 # Setup configs
 stow configs/

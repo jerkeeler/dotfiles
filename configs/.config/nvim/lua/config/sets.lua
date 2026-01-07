@@ -17,6 +17,7 @@ vim.opt.encoding = "UTF-8"
 vim.opt.ruler = true
 vim.opt.title = true
 vim.opt.hidden = true
+vim.opt.timeoutlen = 300 -- Time to wait for mapped sequence (ms)
 vim.opt.ttimeoutlen = 50
 vim.opt.wildmenu = true
 vim.opt.showcmd = true
@@ -51,5 +52,9 @@ vim.opt.ignorecase = true
 
 -- Set conceal level for the Obsidian plugin, not sure what this does
 vim.opt.conceallevel = 2
+
+-- Enable project-local config (.nvim.lua files)
+-- Neovim will prompt before executing untrusted files
+vim.opt.exrc = true
 
 vim.g.copilot_filetypes = {markdown = false}

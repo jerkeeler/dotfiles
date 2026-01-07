@@ -55,11 +55,13 @@ Device specific values should live outside of this repo. For zsh, use `.zprofile
 Windsurf (formerly Codeium) is configured in Neovim but disabled by default. To enable it on a specific device, set the following environment variable:
 
 **Fish** (`~/.config/fish/conf.d/local.fish`):
+
 ```fish
 set -gx ENABLE_WINDSURF 1
 ```
 
 **Zsh** (`~/.zprofile`):
+
 ```bash
 export ENABLE_WINDSURF=1
 ```
@@ -76,3 +78,5 @@ strfile extra_fortunes
 ```
 
 `extra_fortunes` must have a new fortune on each line and each line must be separated by a %.
+
+this doesn't seem to work quite yet

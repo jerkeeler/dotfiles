@@ -12,6 +12,8 @@ bold-is-bright = true
 clipboard-trim-trailing-spaces = true
 quick-terminal-position = top
 quick-terminal-animation-duration = 0
+bell-features = system
+desktop-notifications = true
 
 # ====================================
 # Keybinds

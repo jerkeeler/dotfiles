@@ -2,11 +2,12 @@ local function map(mode, lhs, rhs)
 	vim.keymap.set(mode, lhs, rhs, { silent = true })
 end
 
--- Smart way to move between windows
-map("n", "<C-j>", "<C-W>j")
-map("n", "<C-k>", "<C-W>k")
-map("n", "<C-h>", "<C-W>h")
-map("n", "<C-l>", "<C-W>l")
+-- Window navigation handled by vim-tmux-navigator plugin
+-- (see lua/plugins/vim-tmux-navigator.lua)
+-- map("n", "<C-j>", "<C-W>j")
+-- map("n", "<C-k>", "<C-W>k")
+-- map("n", "<C-h>", "<C-W>h")
+-- map("n", "<C-l>", "<C-W>l")
 
 -- Smart way to resize windows
 map("n", "<C-Right>", "<C-w><")
@@ -105,23 +106,36 @@ map("n", "<Leader>bd", "<cmd>bdelete<cr>")
 -- map("n", "<leader>fb", "<cmd>Telescope file_browser<cr>")
 
 -- """"""""""""""""""""""""""""""
--- " FzfLua remaps
+-- " FzfLua remaps (with project whitelist support)
 -- """"""""""""""""""""""""""""""
-map("n", "<leader>ff", "<cmd>FzfLua files<cr>")
+-- Whitelist-aware searches (respects vim.g.project_whitelist if set)
+map("n", "<leader>ff", function()
+	local opts = _G.fzf_files_opts and _G.fzf_files_opts() or {}
+	require("fzf-lua").files(opts)
+end)
 map("n", "<leader>fb", "<cmd>FzfLua buffers<cr>")
-map("n", "<leader>fg", "<cmd>FzfLua live_grep<cr>")
-map("n", "<leader>fw", "<cmd>FzfLua grep_cword<cr>")
+map("n", "<leader>fg", function()
+	local opts = _G.fzf_grep_opts and _G.fzf_grep_opts() or {}
+	require("fzf-lua").live_grep(opts)
+end)
+map("n", "<leader>fw", function()
+	local opts = _G.fzf_grep_opts and _G.fzf_grep_opts() or {}
+	require("fzf-lua").grep_cword(opts)
+end)
 map("n", "<leader>fd", "<cmd>lua require('fzf-lua').lsp_document_symbols()<cr>")
--- map("n", "<leader>fw", "<cmd>lua require('fzf-lua').lsp_workspace_symbols()<cr>")
--- map("n", "<leader>fg", "<cmd>FzfLua git_files<cr>")
+
+-- Bypass whitelist - search all files/folders (uppercase variants)
+map("n", "<leader>fF", "<cmd>FzfLua files<cr>")
+map("n", "<leader>fG", "<cmd>FzfLua live_grep<cr>")
+map("n", "<leader>fW", "<cmd>FzfLua grep_cword<cr>")
 
 -- """"""""""""""""""""""""""""""
 -- " Copilot
 -- """"""""""""""""""""""""""""""
 -- Change autocomplete key to <C-a>
-vim.api.nvim_set_keymap("i", "<C-a>", 'copilot#Accept("<CR>")', { expr = true, silent = true })
-vim.g.copilot_no_tab_map = true
-map("n", "<C-c>", "<cmd>CopilotChatToggle<cr>")
+-- vim.api.nvim_set_keymap("i", "<C-a>", 'copilot#Accept("<CR>")', { expr = true, silent = true })
+-- vim.g.copilot_no_tab_map = true
+-- map("n", "<C-c>", "<cmd>CopilotChatToggle<cr>")
 
 -- """"""""""""""""""""""""""""""
 -- " (DEPRECATED) Neotree remaps
@@ -134,6 +148,7 @@ map("n", "<C-c>", "<cmd>CopilotChatToggle<cr>")
 -- " Nvim-tree remaps
 -- """"""""""""""""""""""""""""""
 map("n", "<leader>n", "<cmd>NvimTreeToggle<cr>")
+map("n", "<leader>N", "<cmd>NvimTreeToggleWhitelist<cr>") -- Toggle whitelist filter
 -- map("n", "<leader>nc", "<cmd>Neotree position=current<cr>")
 -- map("n", "<leader>ng", "<cmd>Neotree float git_status<cr>")
 

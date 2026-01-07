@@ -48,7 +48,23 @@ it should live in the same path under `configs/`. Once added run `stow configs/`
 
 ## Device-specific config
 
-Device specific .zshrc values should live in that devices `.zprofile`. For example if I have an `affirm-specific` alias, that would be stored in `.zprofile` on the Affirm device.
+Device specific values should live outside of this repo. For zsh, use `.zprofile`. For fish, use `~/.config/fish/conf.d/local.fish`. For example if I have an `affirm-specific` alias, that would be stored in one of these files on the Affirm device.
+
+### Windsurf AI Autocomplete
+
+Windsurf (formerly Codeium) is configured in Neovim but disabled by default. To enable it on a specific device, set the following environment variable:
+
+**Fish** (`~/.config/fish/conf.d/local.fish`):
+```fish
+set -gx ENABLE_WINDSURF 1
+```
+
+**Zsh** (`~/.zprofile`):
+```bash
+export ENABLE_WINDSURF=1
+```
+
+After enabling, restart Neovim and run `:Codeium Auth` to authenticate.
 
 ## Adding more fortunes
 

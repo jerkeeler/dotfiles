@@ -15,8 +15,8 @@ return {
 				enabled = true,
 				key_bindings = {
 					accept = "<Tab>",
-					accept_word = "<C-Right>",
-					accept_line = "<C-Down>",
+					accept_word = "<M-f>",
+					accept_line = "<M-e>",
 					next = "<M-]>",
 					prev = "<M-[>",
 					clear = "<C-]>",

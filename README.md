@@ -116,8 +116,8 @@ export ENABLE_WINDSURF=1
 **Keybindings:**
 
 - `Tab` - Accept full suggestion
-- `Ctrl-Right` - Accept next word
-- `Ctrl-Down` - Accept next line
+- `Meta-f` - Accept next word
+- `Meta-e` - Accept next line
 - `Meta-]` / `Meta-[` - Cycle through suggestions
 - `Ctrl-]` - Clear suggestion
 

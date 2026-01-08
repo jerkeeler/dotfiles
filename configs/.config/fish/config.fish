@@ -38,6 +38,7 @@ fish_add_path ~/go/bin
 # Using -gx instead of -Ux since universal vars persist and don't need to be set on every shell init
 set -gx EDITOR "nvim"
 set -gx LSCOLORS "gxfxbEaEBxxEhEhBaDaCaD"
+set -gx RIPGREP_CONFIG_PATH "$HOME/.ripgreprc"
 
 # FZF configuration (using fd for better performance)
 set -gx FZF_DEFAULT_COMMAND 'fd --type f --hidden --follow --exclude .git'

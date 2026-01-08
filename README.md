@@ -251,6 +251,186 @@ A comprehensive guide to all custom keybindings across Neovim, tmux, and Fish sh
 | `<leader>gs` | Stage git hunk      |
 | `<leader>gu` | Undo stage git hunk |
 
+#### Git Workflow with Fugitive
+
+Fugitive provides a powerful git interface inside Neovim. Here's how to review and manage uncommitted changes:
+
+**Opening the Git Status Screen:**
+
+```
+:Git
+```
+
+This opens a split showing the current git status with staged/unstaged files.
+
+**Navigating the Status Screen:**
+
+| Keybind | Action                                         |
+| ------- | ---------------------------------------------- |
+| `j/k`   | Move down/up through files                     |
+| `=`     | Toggle inline diff for file under cursor       |
+| `Enter` | Open file in a new split                       |
+| `o`     | Open file in a horizontal split                |
+| `gO`    | Open file in a vertical split                  |
+| `O`     | Open file in a new tab                         |
+| `p`     | Open file in preview window                    |
+| `~`     | Open file's parent tree object                 |
+| `)`/`(` | Jump to next/previous file                     |
+| `]c`    | Jump to next hunk in diff                      |
+| `[c`    | Jump to previous hunk in diff                  |
+| `i`     | Jump to next file/hunk, expanding inline diffs |
+| `dv`    | Open vertical diff split (`:Gvdiffsplit`)      |
+| `dd`    | Open horizontal diff split (`:Gdiffsplit`)     |
+| `g?`    | Show help with all available mappings          |
+
+**Staging and Unstaging:**
+
+| Keybind | Action                                                |
+| ------- | ----------------------------------------------------- |
+| `s`     | Stage file or hunk under cursor                       |
+| `u`     | Unstage file or hunk under cursor                     |
+| `-`     | Toggle staging (stage if unstaged, unstage if staged) |
+| `X`     | Discard changes to file under cursor (careful!)       |
+| `I`     | Add file to `.gitignore`                              |
+
+**Committing:**
+
+| Keybind | Action                                        |
+| ------- | --------------------------------------------- |
+| `cc`    | Create a commit (opens commit message editor) |
+| `ca`    | Amend the last commit                         |
+| `ce`    | Amend without editing message                 |
+| `cw`    | Reword the last commit message                |
+| `cvc`   | Create commit with verbose diff shown         |
+
+**Other Useful Commands:**
+
+| Command         | Action                                     |
+| --------------- | ------------------------------------------ |
+| `:Git blame`    | Show git blame in a vertical split         |
+| `:Git log`      | Show git log                               |
+| `:Git log %`    | Show git log for current file              |
+| `:Gvdiffsplit`  | Vertical diff of current file vs index     |
+| `:Gvdiffsplit!` | 3-way merge diff (for conflict resolution) |
+| `:GBrowse`      | Open current file on GitHub (vim-rhubarb)  |
+
+**Typical Workflow:**
+
+1. Run `:Git` to open status screen
+2. Navigate with `j/k` to a changed file
+3. Press `=` to expand inline diff and review changes
+4. Press `]c`/`[c` to jump between hunks within the diff
+5. Press `s` to stage the file (or specific hunks if in diff view)
+6. Press `-` to toggle staging if you change your mind
+7. Repeat for other files
+8. Press `cc` to commit when ready
+9. Write commit message, save and close (`:wq`)
+10. Press `q` to close the fugitive status window
+
+#### GitHub Integration (vim-rhubarb)
+
+vim-rhubarb extends fugitive with GitHub support. Useful for quickly jumping to GitHub from Neovim.
+
+| Command              | Action                                      |
+| -------------------- | ------------------------------------------- |
+| `:GBrowse`           | Open current file on GitHub in browser      |
+| `:GBrowse!`          | Copy GitHub URL to clipboard (don't open)   |
+| `:'<,'>GBrowse`      | Open selected lines on GitHub (visual mode) |
+| `:GBrowse @upstream` | Open file on upstream remote                |
+| `:GBrowse HEAD~3:%`  | Open file 3 commits ago                     |
+
+In fugitive's `:Git` status screen, you can also press `Enter` on a commit to view it, then use `:GBrowse` to open that commit on GitHub.
+
+#### GitHub PR Reviews (octo.nvim)
+
+octo.nvim provides a full GitHub PR and Issue management interface inside Neovim.
+
+**Prerequisites:**
+
+- GitHub CLI (`gh`) must be installed and authenticated (`gh auth login`)
+
+**Opening PRs and Issues:**
+
+| Command                      | Action                              |
+| ---------------------------- | ----------------------------------- |
+| `:Octo pr list`              | List PRs for current repo           |
+| `:Octo pr search`            | Search PRs with query               |
+| `:Octo pr edit <number>`     | Open PR by number                   |
+| `:Octo pr create`            | Create a new PR from current branch |
+| `:Octo pr checkout <number>` | Checkout PR branch locally          |
+| `:Octo issue list`           | List issues for current repo        |
+| `:Octo issue create`         | Create a new issue                  |
+| `:Octo issue edit <number>`  | Open issue by number                |
+
+**Navigating a PR (in PR buffer):**
+
+| Keybind | Action                    |
+| ------- | ------------------------- |
+| `]c`    | Next comment              |
+| `[c`    | Previous comment          |
+| `]f`    | Next changed file         |
+| `[f`    | Previous changed file     |
+| `<CR>`  | Open file / expand thread |
+| `<C-o>` | Go back                   |
+
+**PR Actions:**
+
+| Keybind      | Action                             |
+| ------------ | ---------------------------------- |
+| `<leader>ca` | Add comment                        |
+| `<leader>cd` | Delete comment                     |
+| `<leader>sa` | Add suggestion (in diff view)      |
+| `<leader>ic` | Add inline comment on current line |
+| `<leader>la` | Add label                          |
+| `<leader>ld` | Remove label                       |
+| `<leader>ra` | Add reviewer                       |
+| `<leader>rd` | Remove reviewer                    |
+| `<leader>aa` | Add assignee                       |
+| `<leader>ad` | Remove assignee                    |
+
+**Review Actions:**
+
+| Keybind      | Action                        |
+| ------------ | ----------------------------- |
+| `<leader>va` | Start review                  |
+| `<leader>vs` | Submit review                 |
+| `<leader>vd` | Discard/delete pending review |
+| `<leader>vr` | Resume pending review         |
+
+**PR Management:**
+
+| Keybind      | Action                |
+| ------------ | --------------------- |
+| `<leader>pm` | Merge PR              |
+| `<leader>pc` | Close PR              |
+| `<leader>pn` | Checkout PR           |
+| `<leader>po` | Open PR in browser    |
+| `<leader>pr` | Reopen PR             |
+| `<leader>pp` | List PR commits       |
+| `<leader>pf` | List PR changed files |
+
+**Viewing PR Diffs:**
+
+| Command            | Action             |
+| ------------------ | ------------------ |
+| `:Octo pr diff`    | Show PR diff       |
+| `:Octo pr changes` | List changed files |
+| `:Octo pr commits` | List commits in PR |
+
+**Typical PR Review Workflow:**
+
+1. Run `:Octo pr list` to see open PRs (uses fzf-lua picker)
+2. Select a PR to open it in a buffer
+3. Press `<leader>pf` to list changed files, select one to view diff
+4. Navigate hunks with `]c`/`[c`
+5. Press `<leader>ic` to add inline comment on a specific line
+6. Press `<leader>va` to start your review
+7. Continue reviewing files and adding comments
+8. Press `<leader>vs` to submit review (approve/request changes/comment)
+9. Press `<leader>pm` to merge if approved
+
+**Tip:** Run `:Octo actions` to see all available actions in current context, or press `g?` for help.
+
 #### Comments (Comment.nvim)
 
 | Keybind       | Action                                     |

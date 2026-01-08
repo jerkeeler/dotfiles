@@ -3,6 +3,12 @@ alias v nvim
 alias l 'ls -lah'
 alias cl clear
 alias reload 'exec fish'
+
+# Directory navigation
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias prev="cd -"
 alias obs "cd ~/Documents/in_my_life && nvim"
 alias glog "git log --oneline --graph"
 alias ta "tmux attach"
@@ -18,7 +24,6 @@ abbr -a gco git checkout
 abbr -a gp  git push
 abbr -a gpl git pull
 abbr -a gd  git diff
-abbr -a gco git checkout
 abbr -a update_master "git fetch origin master:master"
 abbr -a update_main "git fetch origin main:main"
 alias gfsmon "git fsmonitor--daemon start"

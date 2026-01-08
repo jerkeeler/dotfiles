@@ -207,3 +207,10 @@ end
 
 -- Map the function to <leader> + t
 map("n", "<leader>tt", get_formatted_date, { noremap = true, silent = true })
+
+-- """"""""""""""""""""""""""""""
+-- " Diagnostic navigation
+-- """"""""""""""""""""""""""""""
+map("n", "[d", vim.diagnostic.goto_prev, { desc = "Previous diagnostic" })
+map("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
+map("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic float" })

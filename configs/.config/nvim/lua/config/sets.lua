@@ -56,5 +56,3 @@ vim.opt.conceallevel = 2
 -- Enable project-local config (.nvim.lua files)
 -- Neovim will prompt before executing untrusted files
 vim.opt.exrc = true
-
-vim.g.copilot_filetypes = {markdown = false}

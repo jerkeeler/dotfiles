@@ -167,3 +167,228 @@ strfile extra_fortunes
 ```
 
 `extra_fortunes` must have a new fortune on each line and each line must be separated by a %.
+
+## Keybindings Reference
+
+A comprehensive guide to all custom keybindings across Neovim, tmux, and Fish shell.
+
+### Neovim Keybindings
+
+**Leader Key:** `Space`
+**Local Leader:** `\`
+
+#### Navigation
+
+| Keybind        | Action                             | Source             |
+| -------------- | ---------------------------------- | ------------------ |
+| `Ctrl+h/j/k/l` | Navigate between splits/tmux panes | vim-tmux-navigator |
+| `Ctrl+u`       | Half-page up (centered)            | remap.lua          |
+| `Ctrl+d`       | Half-page down (centered)          | remap.lua          |
+| `n`            | Next search result (centered)      | remap.lua          |
+| `N`            | Previous search result (centered)  | remap.lua          |
+| `[d`           | Previous diagnostic                | remap.lua          |
+| `]d`           | Next diagnostic                    | remap.lua          |
+| `[c`           | Previous git hunk                  | gitsigns           |
+| `]c`           | Next git hunk                      | gitsigns           |
+
+#### File Search (FzfLua)
+
+| Keybind      | Action                 | Notes              |
+| ------------ | ---------------------- | ------------------ |
+| `<leader>ff` | Find files             | Respects whitelist |
+| `<leader>fg` | Live grep              | Respects whitelist |
+| `<leader>fw` | Grep word under cursor | Respects whitelist |
+| `<leader>fb` | Search buffers         |                    |
+| `<leader>fd` | LSP document symbols   |                    |
+| `<leader>fF` | Find all files         | Bypasses whitelist |
+| `<leader>fG` | Live grep all          | Bypasses whitelist |
+| `<leader>fW` | Grep word in all files | Bypasses whitelist |
+
+#### Harpoon (Quick File Access)
+
+| Keybind        | Action                   |
+| -------------- | ------------------------ |
+| `<leader>a`    | Add file to harpoon      |
+| `<leader>d`    | Remove file from harpoon |
+| `Ctrl+e`       | Toggle harpoon menu      |
+| `<leader>1`    | Jump to harpoon slot 1   |
+| `<leader>2`    | Jump to harpoon slot 2   |
+| `<leader>3`    | Jump to harpoon slot 3   |
+| `<leader>4`    | Jump to harpoon slot 4   |
+| `Ctrl+Shift+P` | Previous harpoon item    |
+| `Ctrl+Shift+N` | Next harpoon item        |
+
+#### File Explorer (nvim-tree)
+
+| Keybind     | Action                  |
+| ----------- | ----------------------- |
+| `<leader>n` | Toggle nvim-tree        |
+| `<leader>N` | Toggle whitelist filter |
+
+#### LSP
+
+| Keybind      | Action                            |
+| ------------ | --------------------------------- |
+| `gd`         | Go to definition                  |
+| `gr`         | Go to references                  |
+| `gi`         | Go to implementation              |
+| `gt`         | Go to type definition             |
+| `se`         | Show diagnostic float             |
+| `<leader>e`  | Show diagnostic float (alternate) |
+| `<leader>rn` | Rename symbol                     |
+| `<leader>cf` | Format file/selection             |
+
+#### Git (gitsigns + fugitive)
+
+| Keybind      | Action              |
+| ------------ | ------------------- |
+| `[c`         | Previous git hunk   |
+| `]c`         | Next git hunk       |
+| `<leader>gp` | Preview git hunk    |
+| `<leader>gb` | Git blame line      |
+| `<leader>gr` | Reset git hunk      |
+| `<leader>gR` | Reset git buffer    |
+| `<leader>gs` | Stage git hunk      |
+| `<leader>gu` | Undo stage git hunk |
+
+#### Comments (Comment.nvim)
+
+| Keybind       | Action                                     |
+| ------------- | ------------------------------------------ |
+| `gcc`         | Toggle line comment                        |
+| `gbc`         | Toggle block comment                       |
+| `gc{motion}`  | Comment with motion (e.g., `gcip`, `gc5j`) |
+| `gc` (visual) | Comment selection                          |
+| `gb` (visual) | Block comment selection                    |
+| `gco`         | Add comment below                          |
+| `gcO`         | Add comment above                          |
+| `gcA`         | Add comment at end of line                 |
+
+#### Windows & Buffers
+
+| Keybind      | Action           |
+| ------------ | ---------------- |
+| `<leader>so` | Vertical split   |
+| `<leader>sp` | Horizontal split |
+| `<leader>l`  | Next buffer      |
+| `<leader>h`  | Previous buffer  |
+| `<leader>bd` | Delete buffer    |
+| `<leader>tn` | Next tab         |
+| `<leader>tp` | Previous tab     |
+| `Ctrl+Arrow` | Resize window    |
+| `<leader>x`  | Close window     |
+
+#### Editing & Misc
+
+| Keybind              | Action                             |
+| -------------------- | ---------------------------------- |
+| `<leader>w`          | Fast save                          |
+| `<leader>p` (visual) | Paste without overwriting register |
+| `<leader>pp`         | Toggle paste mode                  |
+| `<leader>ss`         | Toggle spell check                 |
+| `<leader><CR>`       | Clear search highlight             |
+| `<leader>q`          | Open scratch buffer (`~/buffer`)   |
+| `<leader>ut`         | Toggle undotree                    |
+
+#### Obsidian
+
+| Keybind      | Action                     |
+| ------------ | -------------------------- |
+| `<leader>nn` | Create new Obsidian note   |
+| `<leader>tt` | Insert formatted date link |
+
+### tmux Keybindings
+
+**Prefix Key:** `Ctrl+Space`
+
+#### Navigation
+
+| Keybind        | Action                                          |
+| -------------- | ----------------------------------------------- |
+| `Ctrl+h/j/k/l` | Navigate between panes (integrates with Neovim) |
+
+#### Pane Management
+
+| Keybind            | Action                              |
+| ------------------ | ----------------------------------- |
+| `<prefix> \|`      | Split vertically                    |
+| `<prefix> -`       | Split horizontally                  |
+| `<prefix> h/j/k/l` | Resize pane (repeatable)            |
+| `<prefix> m`       | Toggle pane zoom (maximize/restore) |
+
+#### Window Management
+
+| Keybind          | Action            |
+| ---------------- | ----------------- |
+| `<prefix> Left`  | Move window left  |
+| `<prefix> Right` | Move window right |
+
+#### Copy Mode (vi-style)
+
+| Keybind           | Action                         |
+| ----------------- | ------------------------------ |
+| `<prefix> [`      | Enter copy mode                |
+| `v`               | Begin selection (in copy mode) |
+| `y`               | Copy selection (in copy mode)  |
+| `PageUp/PageDown` | Scroll half-page               |
+| `P`               | Paste buffer                   |
+
+#### Misc
+
+| Keybind      | Action              |
+| ------------ | ------------------- |
+| `<prefix> r` | Reload tmux config  |
+| `<prefix> I` | Install TPM plugins |
+
+### Fish Shell
+
+#### Aliases
+
+| Alias    | Command                     |
+| -------- | --------------------------- |
+| `v`      | `nvim`                      |
+| `vim`    | `nvim`                      |
+| `l`      | `ls -lah`                   |
+| `cl`     | `clear`                     |
+| `reload` | Reload fish shell           |
+| `..`     | `cd ..`                     |
+| `...`    | `cd ../..`                  |
+| `....`   | `cd ../../..`               |
+| `prev`   | `cd -` (previous directory) |
+| `ta`     | `tmux attach`               |
+| `dev`    | `cd ~/Developer`            |
+| `obs`    | Open Obsidian vault in nvim |
+| `glog`   | `git log --oneline --graph` |
+
+#### Git Abbreviations
+
+| Abbr            | Expansion                             |
+| --------------- | ------------------------------------- |
+| `gs`            | `git status -sb`                      |
+| `ga`            | `git add`                             |
+| `gc`            | `git commit -am "` (cursor in quotes) |
+| `gcm`           | `git commit -m`                       |
+| `gco`           | `git checkout`                        |
+| `gp`            | `git push`                            |
+| `gpl`           | `git pull`                            |
+| `gd`            | `git diff`                            |
+| `update_master` | `git fetch origin master:master`      |
+| `update_main`   | `git fetch origin main:main`          |
+
+#### Custom Functions
+
+| Function              | Description                     |
+| --------------------- | ------------------------------- |
+| `mkcd <dir>`          | Create directory and cd into it |
+| `bup`                 | Update and upgrade Homebrew     |
+| `pull`                | Git fetch with prune + pull     |
+| `gco_remote <branch>` | Checkout remote branch safely   |
+| `br`                  | Broot file manager integration  |
+| `unlock`              | Unlock macOS keychain           |
+
+### Ghostty Terminal
+
+| Keybind             | Action                  |
+| ------------------- | ----------------------- |
+| `Cmd+Shift+`` `     | Toggle quick terminal   |
+| `Cmd+Shift+H/J/K/L` | Navigate between splits |

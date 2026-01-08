@@ -14,11 +14,18 @@ return {
 			harpoon:list():remove()
 		end)
 
-		vim.keymap.set("n", "<C-Q>", function()
+		-- Quick access to harpoon slots via leader keys
+		vim.keymap.set("n", "<leader>1", function()
 			harpoon:list():select(1)
 		end)
-		vim.keymap.set("n", "<C-W>", function()
+		vim.keymap.set("n", "<leader>2", function()
 			harpoon:list():select(2)
+		end)
+		vim.keymap.set("n", "<leader>3", function()
+			harpoon:list():select(3)
+		end)
+		vim.keymap.set("n", "<leader>4", function()
+			harpoon:list():select(4)
 		end)
 
 		vim.keymap.set("n", "<C-e>", function()

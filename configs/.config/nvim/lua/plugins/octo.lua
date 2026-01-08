@@ -10,7 +10,6 @@ return {
 	config = function()
 		require("octo").setup({
 			picker = "fzf-lua",
-			r,
 		})
 	end,
 }

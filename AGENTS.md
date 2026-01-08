@@ -21,6 +21,16 @@
 - Follow existing formatting in `setup.sh` and `update.sh` to keep style consistent.
 - Store new dotfiles under `configs/` using the same path they occupy in `$HOME`.
 
+## OpenCode Configuration
+
+- OpenCode config is located at `configs/.config/opencode/opencode.json`.
+- Vim-like keybindings are configured:
+  - `Ctrl+U` - Scroll up half page
+  - `Ctrl+D` - Scroll down half page
+  - `Ctrl+X` - Leader key (default)
+- Theme is set to `one-dark` by default.
+- After editing `opencode.json`, run `stow configs/` to apply changes.
+
 ## Testing Guidelines
 
 - No automated tests are defined. Validate changes by running `stow configs/` and checking that symlinks resolve correctly.

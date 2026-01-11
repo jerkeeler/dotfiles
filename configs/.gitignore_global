@@ -10,3 +10,4 @@ keeler*
 .cursorignore
 .cursor/
 .nvim.lua
+.worktrees/

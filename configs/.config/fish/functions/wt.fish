@@ -85,6 +85,11 @@ function wt --description "Git worktree management"
 
             cd "$worktree_path"
 
+        case root
+            # Go to the main worktree root (parent of .git common dir)
+            set -l main_root (dirname (realpath (git rev-parse --git-common-dir)))
+            cd "$main_root"
+
         case rm
             if test -z "$name"
                 echo "Usage: wt rm <name>"
@@ -108,6 +113,7 @@ function wt --description "Git worktree management"
             echo "Commands:"
             echo "  create <name> [base]  Create worktree and cd into it"
             echo "  cd <name>             Change to worktree directory"
+            echo "  root                  Go to main worktree root"
             echo "  merge <name>          Merge worktree (ff-only) and clean up"
             echo "  ls                    List all worktrees"
             echo "  rm <name>             Remove worktree without merging"

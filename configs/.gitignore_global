@@ -9,3 +9,4 @@ keeler*
 .envrc
 .cursorignore
 .cursor/
+.nvim.lua

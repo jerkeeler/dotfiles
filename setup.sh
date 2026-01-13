@@ -31,3 +31,9 @@ curl -fsSL https://claude.ai/install.sh | bash
 
 # Setup configs
 stow configs/
+
+# Create private.fish from template if it doesn't exist
+if [ ! -f ~/.config/fish/private.fish ]; then
+  cp ~/.config/fish/private.fish.example ~/.config/fish/private.fish
+  echo "Created ~/.config/fish/private.fish from template - edit to configure machine-specific settings"
+fi

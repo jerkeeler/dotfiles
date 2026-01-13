@@ -58,3 +58,4 @@ fish_add_path $HOME/.local/bin
 #if test -n "$SSH_CONNECTION"
 #  security unlock-keychain ~/Library/Keychains/login.keychain-db
 #end
+set -gx ENABLE_EXPERIMENTAL_MCP_CLI true

@@ -1,2 +1,5 @@
 [user]
     email = jeremy.keeler@affirm.com
+
+[core]
+    excludesFile = ~/.gitignore_global_work

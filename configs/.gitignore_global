@@ -8,6 +8,5 @@ remote-schema.graphql
 keeler*
 .envrc
 .cursorignore
-.cursor/
 .nvim.lua
 .worktrees/

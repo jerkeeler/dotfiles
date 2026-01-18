@@ -13,6 +13,11 @@ return {
 			enable_cmp_source = false,
 			virtual_text = {
 				enabled = true,
+				default_filetype_enabled = true,
+				filetypes = {
+					beancount = false,
+					ledger = false,
+				},
 				key_bindings = {
 					accept = "<Tab>",
 					accept_word = "<M-f>",

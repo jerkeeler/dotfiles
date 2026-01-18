@@ -38,6 +38,7 @@ return {
 				"python",
 				"go",
 				"ledger",
+				"beancount",
 			},
 			incremental_selection = {
 				enable = true,

@@ -5,7 +5,14 @@ return {
 		local conform = require("conform")
 
 		conform.setup({
+			formatters = {
+				["bean-format"] = {
+					command = "bean-format",
+					stdin = true,
+				},
+			},
 			formatters_by_ft = {
+				beancount = { "bean-format" },
 				javascript = { "prettier" },
 				typescript = { "prettier" },
 				javascriptreact = { "prettier" },

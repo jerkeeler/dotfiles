@@ -1,5 +1,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
+vim.g.python3_host_prog = vim.fn.expand("~/.local/share/uv/tools/beancount/bin/pynvim-python")
 -- vim.opt.notermguicolors = true
 vim.opt.number = true
 vim.opt.bg = "dark"

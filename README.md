@@ -74,26 +74,22 @@ vim.g.project_root = vim.fn.getcwd()
 - `<leader>ff` - Search files (respects whitelist)
 - `<leader>fg` - Live grep (respects whitelist)
 - `<leader>fw` - Grep word under cursor (respects whitelist)
-- `<leader>n` - Toggle nvim-tree (with whitelist filter)
-
 **Bypass whitelist with uppercase variants:**
 
 - `<leader>fF` - Search all files
 - `<leader>fG` - Live grep all files
 - `<leader>fW` - Grep word in all files
-- `<leader>N` - Toggle nvim-tree without filter
 
 **Features:**
 
 - Top-level files are always visible (only folders are filtered)
-- Integrates with both fzf-lua and nvim-tree
+- Integrates with fzf-lua for searching
 - Neovim will prompt before executing `.nvim.lua` files for security
 
 **Configuration:**
 
 - `configs/.config/nvim/lua/config/whitelist.lua` - Core filtering module
 - `configs/.config/nvim/lua/plugins/fzf-lua.lua` - FzfLua integration
-- `configs/.config/nvim/lua/plugins/nvim-tree.lua` - File tree integration
 
 ### AI-Powered Code Completion
 
@@ -218,12 +214,13 @@ A comprehensive guide to all custom keybindings across Neovim, tmux, and Fish sh
 | `Ctrl+Shift+P` | Previous harpoon item    |
 | `Ctrl+Shift+N` | Next harpoon item        |
 
-#### File Explorer (nvim-tree)
+#### File Explorer (yazi)
 
-| Keybind     | Action                  |
-| ----------- | ----------------------- |
-| `<leader>n` | Toggle nvim-tree        |
-| `<leader>N` | Toggle whitelist filter |
+| Keybind      | Action                            |
+| ------------ | --------------------------------- |
+| `<leader>-`  | Open yazi at current file         |
+| `<leader>cw` | Open yazi at working directory    |
+| `<C-up>`     | Resume last yazi session          |
 
 #### LSP
 

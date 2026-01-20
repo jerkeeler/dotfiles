@@ -138,21 +138,6 @@ map("n", "<leader>fW", "<cmd>FzfLua grep_cword<cr>")
 -- map("n", "<C-c>", "<cmd>CopilotChatToggle<cr>")
 
 -- """"""""""""""""""""""""""""""
--- " (DEPRECATED) Neotree remaps
--- """"""""""""""""""""""""""""""
--- map("n", "<leader>n", "<cmd>Neotree<cr>")
--- map("n", "<leader>nc", "<cmd>Neotree position=current<cr>")
--- map("n", "<leader>ng", "<cmd>Neotree float git_status<cr>")
-
--- """"""""""""""""""""""""""""""
--- " Nvim-tree remaps
--- """"""""""""""""""""""""""""""
-map("n", "<leader>n", "<cmd>NvimTreeToggle<cr>")
-map("n", "<leader>N", "<cmd>NvimTreeToggleWhitelist<cr>") -- Toggle whitelist filter
--- map("n", "<leader>nc", "<cmd>Neotree position=current<cr>")
--- map("n", "<leader>ng", "<cmd>Neotree float git_status<cr>")
-
--- """"""""""""""""""""""""""""""
 -- " Undotree remaps
 -- """"""""""""""""""""""""""""""
 map("n", "<leader>ut", "<cmd>UndotreeToggle<cr>")

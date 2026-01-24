@@ -12,6 +12,7 @@ alias prev="cd -"
 alias obs "cd ~/Documents/in_my_life && nvim"
 alias glog "git log --oneline --graph"
 alias ta "tmux attach"
+alias mux tmuxinator
 alias dev "cd ~/Developer"
 alias led "cd ~/Documents/personal_important/personal_ledger_redux && source .venv/bin/activate.fish"
 

@@ -1,7 +1,7 @@
-# /Users/jerkeeler/.config/tmuxinator/keeler-tools.yml
+# /Users/jerkeeler/.config/tmuxinator/dotfiles.yml
 
-name: keeler-tools
-root: ~/Developer/keeler-tools
+name: dotfiles
+root: ~/dotfiles
 
 # Optional tmux socket
 # socket_name: foo
@@ -12,7 +12,7 @@ root: ~/Developer/keeler-tools
 # Project hooks
 
 # Runs on project start, always
-on_project_start: printf '\033]0;mux keeler-tools\007'
+on_project_start: printf '\033]0;mux dotfiles\007'
 
 # Run on project start, the first time
 # on_project_first_start: command
@@ -54,4 +54,3 @@ windows:
         - vim
         -
   - claude: claude
-  - server: npm run dev

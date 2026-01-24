@@ -1,0 +1,22 @@
+name: aomstats
+root: ~/Developer/aomstats
+
+on_project_start: printf '\033]0;mux aomstats\007'
+
+windows:
+  - editor:
+      layout: main-vertical
+      panes:
+        - tmux resize-pane -x 140 && vim
+        -
+  - claude: claude
+  - servers:
+      layout: even-vertical
+      panes:
+        - cd frontend && npm run dev
+        - docker compose up postgres redis
+  - logs:
+      layout: even-vertical
+      panes:
+        - less +F data/aomstats.log
+        - less +F data/aomstats-svelte.log

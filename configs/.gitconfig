@@ -25,8 +25,9 @@
 [delta]
   navigate = true
   dark = true
-  syntax-theme = Dracula
-  side-by-side = true
+  syntax-theme = OneHalfDark
+  side-by-side = false
+  line-numbers = true
 [interactive]
   diffFilter = delta --color-only
 [merge]

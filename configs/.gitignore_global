@@ -10,3 +10,4 @@ keeler*
 .cursorignore
 .nvim.lua
 .worktrees/
+.claude/settings.local.json

@@ -18,6 +18,9 @@ return {
 		-- basedpyright with indexing optimizations
 		vim.lsp.config("basedpyright", {
 			capabilities = capabilities,
+			flags = {
+				debounce_text_changes = 150,
+			},
 			settings = {
 				basedpyright = {
 					analysis = {
@@ -29,6 +32,15 @@ return {
 				},
 			},
 		})
+
+		-- Suppress basedpyright's slow enumeration warning for large projects
+		local orig_notify = vim.notify
+		vim.notify = function(msg, level, opts)
+			if msg and msg:match("Enumeration of workspace source files is taking longer") then
+				return
+			end
+			return orig_notify(msg, level, opts)
+		end
 
 		-- LSP progress indicator
 		vim.api.nvim_create_autocmd("LspProgress", {

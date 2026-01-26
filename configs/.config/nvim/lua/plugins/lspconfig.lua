@@ -1,98 +1,44 @@
 return {
 	"neovim/nvim-lspconfig",
-	event = { "BufReadPre", "BufNewFile" },
+	lazy = false,
+	priority = 100,
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
 		{ "folke/neodev.nvim", opts = {} },
 		"mason-org/mason-lspconfig.nvim",
 	},
 	config = function()
-		local nvim_lsp = require("lspconfig")
-		local mason_lspconfig = require("mason-lspconfig")
-
-		local protocol = require("vim.lsp.protocol")
-
-		local on_attach = function(client, bufnr)
-			-- format on save
-			if client.server_capabilities.documentFormattingProvider then
-				vim.api.nvim_create_autocmd("BufWritePre", {
-					group = vim.api.nvim_create_augroup("Format", { clear = true }),
-					buffer = bufnr,
-					callback = function()
-						vim.lsp.buf.format()
-					end,
-				})
-			end
-		end
-
 		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-		-- mason_lspconfig.setup_handlers({
-		-- 	function(server)
-		-- 		nvim_lsp[server].setup({
-		-- 			capabilities = capabilities,
-		-- 		})
-		-- 	end,
-		-- 	["ts_ls"] = function()
-		-- 		nvim_lsp["ts_ls"].setup({
-		-- 			on_attach = on_attach,
-		-- 			capabilities = capabilities,
-		-- 		})
-		-- 	end,
-		-- 	["cssls"] = function()
-		-- 		nvim_lsp["cssls"].setup({
-		-- 			on_attach = on_attach,
-		-- 			capabilities = capabilities,
-		-- 		})
-		-- 	end,
-		-- 	["tailwindcss"] = function()
-		-- 		nvim_lsp["tailwindcss"].setup({
-		-- 			on_attach = on_attach,
-		-- 			capabilities = capabilities,
-		-- 		})
-		-- 	end,
-		-- 	["html"] = function()
-		-- 		nvim_lsp["html"].setup({
-		-- 			on_attach = on_attach,
-		-- 			capabilities = capabilities,
-		-- 		})
-		-- 	end,
-		-- 	["jsonls"] = function()
-		-- 		nvim_lsp["jsonls"].setup({
-		-- 			on_attach = on_attach,
-		-- 			capabilities = capabilities,
-		-- 		})
-		-- 	end,
-		-- 	["eslint"] = function()
-		-- 		nvim_lsp["eslint"].setup({
-		-- 			on_attach = on_attach,
-		-- 			capabilities = capabilities,
-		-- 		})
-		-- 	end,
-		-- 	["pyright"] = function()
-		-- 		nvim_lsp["pyright"].setup({
-		-- 			on_attach = on_attach,
-		-- 			capabilities = capabilities,
-		-- 		})
-		-- 	end,
-		-- 	["ruby_lsp"] = function()
-		-- 		nvim_lsp["ruby_lsp"].setup({
-		-- 			on_attach = on_attach,
-		-- 			capabilities = capabilities,
-		-- 		})
-		-- 	end,
-		-- 	["rust_analyzer"] = function()
-		-- 		nvim_lsp["rust_analyzer"].setup({
-		-- 			on_attach = on_attach,
-		-- 			capabilities = capabilities,
-		-- 		})
-		-- 	end,
-		-- 	["gopls"] = function()
-		-- 		nvim_lsp["gopls"].setup({
-		-- 			on_attach = on_attach,
-		-- 			capabilities = capabilities,
-		-- 		})
-		-- 	end,
-		-- })
+		-- Default config for all servers
+		vim.lsp.config("*", {
+			capabilities = capabilities,
+		})
+
+		-- basedpyright with indexing optimizations
+		vim.lsp.config("basedpyright", {
+			capabilities = capabilities,
+			settings = {
+				basedpyright = {
+					analysis = {
+						typeCheckingMode = "basic",
+						autoSearchPaths = true,
+						useLibraryCodeForTypes = true,
+						diagnosticMode = "openFilesOnly",
+					},
+				},
+			},
+		})
+
+		-- LSP progress indicator
+		vim.api.nvim_create_autocmd("LspProgress", {
+			callback = function(ev)
+				local client = vim.lsp.get_client_by_id(ev.data.client_id)
+				local value = ev.data.params.value
+				if client and value.kind == "end" then
+					vim.notify(string.format("[%s] Ready", client.name), vim.log.levels.INFO)
+				end
+			end,
+		})
 	end,
 }

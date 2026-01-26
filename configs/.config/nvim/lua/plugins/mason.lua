@@ -1,5 +1,7 @@
 return {
 	"williamboman/mason.nvim",
+	lazy = false,
+	priority = 200,
 	dependencies = {
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
@@ -15,7 +17,7 @@ return {
 				"html",
 				"jsonls",
 				"ts_ls",
-				"pyright",
+				"basedpyright",
 				"tailwindcss",
 				"astro",
 				"svelte",

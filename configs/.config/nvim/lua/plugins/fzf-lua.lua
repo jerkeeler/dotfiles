@@ -26,7 +26,9 @@ return {
 			local root = whitelist.get_project_root()
 
 			if not wl or #wl == 0 then
-				return {} -- No whitelist, use defaults
+				return {
+					rg_opts = "--column --line-number --no-heading --color=always --smart-case --hidden --glob '!.git/' -e",
+				}
 			end
 
 			local globs = whitelist.get_rg_globs(wl)

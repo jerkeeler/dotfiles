@@ -10,6 +10,7 @@ return {
 	config = function()
 		require("octo").setup({
 			picker = "fzf-lua",
+			use_local_fs = true,
 		})
 	end,
 }

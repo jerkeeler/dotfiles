@@ -17,7 +17,8 @@ function gco_remote --description 'Fetch a specific remote branch explicitly and
     echo "🎣 Fetching origin/$branch_name..."
 
     # 3. Fetch ONLY the requested branch to refs/remotes/origin/
-    git fetch origin "$branch_name":"refs/remotes/origin/$branch_name"
+    # The + prefix allows non-fast-forward updates (e.g., rebased branches)
+    git fetch origin "+$branch_name:refs/remotes/origin/$branch_name"
 
     if test $status -eq 0
         echo "✅ Fetch complete. Creating local branch..."

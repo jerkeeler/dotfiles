@@ -3,8 +3,12 @@ return {
 	event = "VeryLazy",
 	dependencies = {
 		"MunifTanjim/nui.nvim",
+		"rcarriga/nvim-notify",
 	},
 	config = function()
+		vim.keymap.set("n", "<leader>fn", "<cmd>Noice pick<cr>", { desc = "Find notifications" })
+		vim.keymap.set("n", "<leader>nd", "<cmd>Noice dismiss<cr>", { desc = "Dismiss notifications" })
+
 		require("noice").setup({
 			cmdline = {
 				enabled = true,

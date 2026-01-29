@@ -43,12 +43,32 @@ return {
 		_G.fzf_files_opts = get_files_opts
 		_G.fzf_grep_opts = get_grep_opts
 
+		-- Keybind to force-close stuck fzf-lua windows
+		vim.keymap.set("n", "<leader>fq", function()
+			require("fzf-lua").hide()
+			-- Also close any lingering fzf terminal buffers
+			for _, win in ipairs(vim.api.nvim_list_wins()) do
+				local buf = vim.api.nvim_win_get_buf(win)
+				local bufname = vim.api.nvim_buf_get_name(buf)
+				if bufname:match("fzf://") or bufname:match("term://.*fzf") then
+					vim.api.nvim_win_close(win, true)
+				end
+			end
+		end, { desc = "Close fzf-lua windows" })
+
 		require("fzf-lua").setup({
 			winopts = {
 				height = 0.85,
 				width = 0.80,
 				preview = {
 					layout = "flex",
+				},
+			},
+			keymap = {
+				builtin = {
+					["<C-/>"] = "toggle-preview",
+					["<C-p>"] = "toggle-preview-cw",
+					["<C-f>"] = "focus-preview",
 				},
 			},
 			grep = {

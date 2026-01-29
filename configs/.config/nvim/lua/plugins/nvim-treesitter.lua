@@ -39,6 +39,7 @@ return {
 				"go",
 				"ledger",
 				"beancount",
+				"regex",
 			},
 			incremental_selection = {
 				enable = true,

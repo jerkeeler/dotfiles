@@ -124,6 +124,7 @@ map("n", "<leader>fw", function()
 	require("fzf-lua").grep_cword(opts)
 end)
 map("n", "<leader>fd", "<cmd>lua require('fzf-lua').lsp_document_symbols()<cr>")
+map("n", "<leader>fo", "<cmd>FzfLua oldfiles<cr>")
 
 -- Bypass whitelist - search all files/folders (uppercase variants)
 map("n", "<leader>fF", "<cmd>FzfLua files<cr>")

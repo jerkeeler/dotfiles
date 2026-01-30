@@ -68,7 +68,7 @@ return {
 				builtin = {
 					["<C-/>"] = "toggle-preview",
 					["<C-p>"] = "toggle-preview-cw",
-					["<C-f>"] = "focus-preview",
+					["<C-o>"] = "focus-preview",
 				},
 			},
 			grep = {

@@ -16,6 +16,7 @@ return {
       { "<leader>g", group = "git" },
       { "<leader>n", group = "notifications" },
       { "<leader>s", group = "split" },
+      { "<leader>d", group = "diagnostics" },
       { "<leader>t", group = "tab" },
       { "<leader>y", group = "yazi" },
     })

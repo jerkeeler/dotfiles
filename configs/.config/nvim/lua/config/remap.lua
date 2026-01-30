@@ -179,6 +179,35 @@ local function open_github_pr()
 end
 map("v", "<leader>gh", open_github_pr)
 
+-- Copy file location for Claude Code
+local function copy_file_location(visual_mode)
+	local filepath = vim.fn.expand("%:p")
+	local result
+
+	if visual_mode then
+		local start_line = vim.fn.line("'<")
+		local end_line = vim.fn.line("'>")
+		if start_line == end_line then
+			result = string.format("file: %s line: %d", filepath, start_line)
+		else
+			result = string.format("file: %s lines: %d-%d", filepath, start_line, end_line)
+		end
+	else
+		result = string.format("file: %s", filepath)
+	end
+
+	vim.fn.setreg("+", result)
+	print(result)
+end
+
+map("n", "<leader>@", function() copy_file_location(false) end)
+map("v", "<leader>@", function()
+	-- Exit visual mode so '< and '> marks are set
+	local esc = vim.api.nvim_replace_termcodes("<Esc>", true, false, true)
+	vim.api.nvim_feedkeys(esc, "nx", false)
+	copy_file_location(true)
+end)
+
 -- Function to get the current date and format it
 local function get_formatted_date()
 	local days = { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" }

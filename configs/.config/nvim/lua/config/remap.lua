@@ -29,7 +29,8 @@ map("n", "<Leader>h", "<cmd>bprevious<cr>")
 -- Change tabs easily
 map("n", "<Leader>tn", "<cmd>tabn<cr>")
 map("n", "<Leader>tp", "<cmd>tabp<cr>")
-map("n", "<Leader>tc", "<cmd>tabclose<cr>")
+map("n", "<Leader>tc", "<cmd>tabnew<cr>")
+map("n", "<Leader>tx", "<cmd>tabclose<cr>")
 
 -- Quick scribble buffer
 map("n", "<Leader>q", "<cmd>e ~/buffer<cr>")
@@ -144,11 +145,12 @@ map("n", "<leader>fW", "<cmd>FzfLua grep_cword<cr>")
 -- """"""""""""""""""""""""""""""
 map("n", "<leader>ut", "<cmd>UndotreeToggle<cr>")
 
--- Basic LSP keybindings for definitions
-map("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
-map("n", "gr", vim.lsp.buf.references, { desc = "Go to references" })
-map("n", "gi", vim.lsp.buf.implementation, { desc = "Go to implementation" })
-map("n", "gt", vim.lsp.buf.type_definition, { desc = "Go to type definition" })
+-- LSP keybindings using fzf-lua (shows loading indicator, jumps directly if single result)
+local fzf_lsp_opts = { jump_to_single_result = true }
+map("n", "gd", function() require("fzf-lua").lsp_definitions(fzf_lsp_opts) end)
+map("n", "gr", function() require("fzf-lua").lsp_references(fzf_lsp_opts) end)
+map("n", "gi", function() require("fzf-lua").lsp_implementations(fzf_lsp_opts) end)
+map("n", "gt", function() require("fzf-lua").lsp_typedefs(fzf_lsp_opts) end)
 map("n", "se", "<cmd>lua vim.diagnostic.open_float()<cr>")
 map("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<cr>")
 
@@ -206,6 +208,16 @@ map("v", "<leader>@", function()
 	local esc = vim.api.nvim_replace_termcodes("<Esc>", true, false, true)
 	vim.api.nvim_feedkeys(esc, "nx", false)
 	copy_file_location(true)
+end)
+
+-- Octo: mark file as viewed and go to next unreviewed
+map("n", "<leader>U", function()
+	local reviews = require("octo.reviews")
+	local layout = reviews.get_current_layout()
+	if layout then
+		layout.file_panel:get_file_at_cursor():toggle_viewed()
+		layout:select_next_unviewed_file()
+	end
 end)
 
 -- Function to get the current date and format it

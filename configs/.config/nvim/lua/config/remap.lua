@@ -146,7 +146,7 @@ map("n", "<leader>fW", "<cmd>FzfLua grep_cword<cr>")
 map("n", "<leader>ut", "<cmd>UndotreeToggle<cr>")
 
 -- LSP keybindings using fzf-lua (shows loading indicator, jumps directly if single result)
-local fzf_lsp_opts = { jump_to_single_result = true }
+local fzf_lsp_opts = { jump1 = true }
 map("n", "gd", function() require("fzf-lua").lsp_definitions(fzf_lsp_opts) end)
 map("n", "gr", function() require("fzf-lua").lsp_references(fzf_lsp_opts) end)
 map("n", "gi", function() require("fzf-lua").lsp_implementations(fzf_lsp_opts) end)
